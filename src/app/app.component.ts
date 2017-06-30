@@ -15,4 +15,21 @@ export class AppComponent {
   arr = ["abc", "def" , "ghi"];
 
   isTrue = true;
+
+
+  //this is for the item lists component
+  items = ["AngularJS" , "ReactJS", "Backbone"];
+
+  newItem = "";
+
+  pushItem = function(){
+    if(this.newItem != ""){
+      this.items.push(this.newItem);
+      this.newItem = "";
+    }
+  }
+
+  removeItem = function(index){
+    this.items.splice(index, 1);
+  }
 }

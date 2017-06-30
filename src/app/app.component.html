@@ -34,6 +34,22 @@
   <li *ngFor = "let i of arr">{{i}}</li>
 </ul>
 
+<!-- simple component which demo item list and event binding -->
+
+<div class = "main">
+  <h1> Item's List </h1>
+  <div class="addItem">
+    <input placeholder="Add Item" class="addText" [(ngModel)]="newItem">
+    <button class="addItem" (click)="pushItem()">Add</button>
+  </div>
+  <ul>
+    <li *ngFor = "let i of items; let indx = index">      
+      {{i}}<span (click)="removeItem(indx)">x</span>
+    </li>
+  </ul>
+
+</div>
+
 
 
 <h2>Here are some links to help you start: </h2>
