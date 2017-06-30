@@ -17,7 +17,18 @@
 
 <!-- using *ngFor, *ngIf-->
 
-<p *ngIf="isTrue">Show My Name : {{obj.name}}</p>
+<p *ngIf="isTrue else elseTemplate">Show My Name for TRUE condition : {{obj.name}}</p>
+<p *ngIf="!isTrue else dontShowTemplate">Show My Name : {{obj.name}}</p>
+<ng-template #dontShowTemplate>This is the template that satisfies the else condition- do not show my name</ng-template>
+
+<br>
+<!-- support multiple template for if and else block -->
+<p *ngIf="isTrue; then ifTemplate else elseTemplate">bla bla</p><br>
+<p *ngIf="!isTrue; then ifTemplate else elseTemplate">bla bla</p>
+<ng-template #ifTemplate>This is the template that satisfies the IF condition</ng-template>
+
+<ng-template #elseTemplate>This is the template that satisfies the ELSE condition</ng-template>
+
 
 <ul>
   <li *ngFor = "let i of arr">{{i}}</li>
