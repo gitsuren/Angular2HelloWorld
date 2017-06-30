@@ -16,6 +16,8 @@ export class AppComponent {
 
   isTrue = true;
 
+  today = new Date(2017, 6, 30);
+
 
   //this is for the item lists component
   items = ["AngularJS" , "ReactJS", "Backbone"];

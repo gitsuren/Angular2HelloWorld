@@ -44,11 +44,28 @@
   </div>
   <ul>
     <li *ngFor = "let i of items; let indx = index">      
-      {{i}}<span (click)="removeItem(indx)">x</span>
+      {{i | uppercase}}<span (click)="removeItem(indx)">x</span>
     </li>
   </ul>
 
 </div>
+
+<br>
+
+<!-- PIPE demo -->
+<h1>PIPE DEMO </h1>
+<h2>{{obj.name | uppercase }}</h2>
+<h2>{{obj.name | lowercase }}</h2>
+
+<h2>{{today}}</h2>
+<h2>{{today | date}}</h2>
+<h2>{{today | date: 'shortDate'}}</h2>
+<h2>{{today | date: 'fullDate'}}</h2>
+<h2>{{today | date: 'fullDate' | uppercase}}</h2>
+
+
+
+
 
 
 
