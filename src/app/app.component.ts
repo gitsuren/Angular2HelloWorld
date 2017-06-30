@@ -6,5 +6,13 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app written in Angular';
+  title: string = 'app written in Angular';
+  obj = {
+    id: 1,
+    name: "Suru"
+  };
+
+  arr = ["abc", "def" , "ghi"];
+
+  isTrue = true;
 }
