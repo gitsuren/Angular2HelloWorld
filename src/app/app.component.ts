@@ -1,12 +1,19 @@
 import { Component } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
 
+import { MyDataServiceService } from './my-data-service.service';
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
+
+constructor(private myDataService:MyDataServiceService){
+
+}
+
   title: string = 'app written in Angular';
   obj = {
     id: 1,
@@ -23,7 +30,9 @@ export class AppComponent {
   baseConverterForm;
 
   hasBinaryChanged = 0;
-  hasHexaChanged = 0
+  hasHexaChanged = 0;
+
+  languageList;
 
 //Validators => from Angular core
 //if you want custom validators, need to create one
@@ -43,6 +52,8 @@ export class AppComponent {
       binary : new FormControl(""),
       hexa : new FormControl("")
     });
+
+    this.languageList = this.myDataService.getLanguageList();
   }
 
 //Custom validators...

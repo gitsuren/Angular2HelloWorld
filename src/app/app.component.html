@@ -75,7 +75,7 @@
    <input type="text" name="lastname" placeholder="lastname" ngModel>
    <br>
    <select name="languages" ngModel>
-     <option *ngFor="let i of items" value="{{i}}">{{i}}</option>
+     <option *ngFor="let i of languageList" value="{{i}}">{{i}}</option>
    </select>
    <br><br>
    <input type="submit" value="submit">
@@ -90,7 +90,7 @@
    <input type="text" name="lastname" placeholder="lastname" formControlName="lastname">
    <br>
    <select name="languages" formControlName="languages">
-     <option *ngFor="let i of items" value="{{i}}">{{i}}</option>
+     <option *ngFor="let i of languageList" value="{{i}}">{{i}}</option>
    </select>
    <br><br>
    <input type="submit" value="submit" [disabled]="!form.valid">
