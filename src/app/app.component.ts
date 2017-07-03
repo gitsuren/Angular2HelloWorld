@@ -25,6 +25,8 @@ export class AppComponent {
   hasBinaryChanged = 0;
   hasHexaChanged = 0
 
+//Validators => from Angular core
+//if you want custom validators, need to create one
   ngOnInit(){
       this.form = new FormGroup({
       firstname : new FormControl("", Validators.compose([
@@ -32,7 +34,7 @@ export class AppComponent {
         Validators.minLength(5),
         Validators.pattern('[\\w\\-\\s\\/]+')
       ])),
-      lastname : new FormControl(""),
+      lastname : new FormControl("", this.textValidator),
       languages : new FormControl("")
     });
 
@@ -43,6 +45,12 @@ export class AppComponent {
     });
   }
 
+//Custom validators...
+  textValidator(control){
+    if(control.value.length < 2){
+      return {'lastname' : true};
+    }
+  }
 
   //this is for the item lists component
   items = ["AngularJS" , "ReactJS", "Backbone"];
