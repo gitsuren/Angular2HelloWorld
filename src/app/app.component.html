@@ -97,6 +97,20 @@
 </form>
 
 
+<h1> -- Base Converter Demo using Model driven Form -- </h1>
+
+<form class="container"
+    [formGroup]="baseConverterForm">
+  <h2>Base Converter </h2>
+  <input type="text" name="decimal" placeholder="decimal" formControlName="decimal" (ngModelChange) = "decimalChanged(oldValue, newValue = $event)">
+  <br>
+   <input type="text" name="binary" placeholder="binary" formControlName="binary" (ngModelChange) = "binaryChanged(oldValue, newValue = $event)">
+    <br>
+   <input type="text" name="hexa" placeholder="hexa" formControlName="hexa" (ngModelChange) = "hexaChanged(oldValue, newValue = $event)">
+   <br>
+</form>
+
+
 <h1>-------MISC----------</h1>
 <h2>Here are some links to help you start: </h2>
 <ul>
