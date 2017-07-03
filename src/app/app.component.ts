@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup, FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -17,6 +18,16 @@ export class AppComponent {
   isTrue = true;
 
   today = new Date(2017, 6, 30);
+
+  form;
+
+  ngOnInit(){
+      this.form = new FormGroup({
+      firstname : new FormControl("Suru"),
+      lastname : new FormControl(""),
+      languages : new FormControl("")
+    });
+  }
 
 
   //this is for the item lists component
@@ -38,4 +49,6 @@ export class AppComponent {
   onSubmit = function(userdata){
     console.log(userdata);
   }
+
+
 }
