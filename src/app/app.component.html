@@ -16,13 +16,14 @@
 <app-member></app-member>-->
 
 <!-- using *ngFor, *ngIf-->
-
+<h1> -- -- using *ngFor, *ngIf-- -- </h1>
 <p *ngIf="isTrue else elseTemplate">Show My Name for TRUE condition : {{obj.name}}</p>
 <p *ngIf="!isTrue else dontShowTemplate">Show My Name : {{obj.name}}</p>
 <ng-template #dontShowTemplate>This is the template that satisfies the else condition- do not show my name</ng-template>
 
 <br>
 <!-- support multiple template for if and else block -->
+<h1> -- support multiple template for if and else block -- </h1>
 <p *ngIf="isTrue; then ifTemplate else elseTemplate">bla bla</p><br>
 <p *ngIf="!isTrue; then ifTemplate else elseTemplate">bla bla</p>
 <ng-template #ifTemplate>This is the template that satisfies the IF condition</ng-template>
@@ -35,7 +36,7 @@
 </ul>
 
 <!-- simple component which demo item list and event binding -->
-
+<h1> -- simple component which demo item list and event binding -- </h1>
 <div class = "main">
   <h1> Item's List </h1>
   <div class="addItem">
@@ -53,7 +54,7 @@
 <br>
 
 <!-- PIPE demo -->
-<h1>PIPE DEMO </h1>
+<h1> -- PIPE demo -- </h1>
 <h2>{{obj.name | uppercase }}</h2>
 <h2>{{obj.name | lowercase }}</h2>
 
@@ -64,11 +65,24 @@
 <h2>{{today | date: 'fullDate' | uppercase}}</h2>
 
 
+<!-- Form Validation - template driven form or component model driven forms -->
+<h1> -- Form Validation - template driven form or component model driven forms -- </h1>
+<form class="container"
+    #userForm = "ngForm"
+  (ngSubmit) = "onSubmit(userForm.value)">
+  <input type="text" name="firstname" placeholder="firstname" ngModel>
+  <br>
+   <input type="text" name="lastname" placeholder="lastname" ngModel>
+   <br>
+   <select name="languages" ngModel>
+     <option *ngFor="let i of items" value="{{i}}">{{i}}</option>
+   </select>
+   <br><br>
+   <input type="submit" value="submit">
+</form>
 
 
-
-
-
+<h1>-------MISC----------</h1>
 <h2>Here are some links to help you start: </h2>
 <ul>
   <li>

@@ -34,4 +34,8 @@ export class AppComponent {
   removeItem = function(index){
     this.items.splice(index, 1);
   }
+//Template drive form
+  onSubmit = function(userdata){
+    console.log(userdata);
+  }
 }
