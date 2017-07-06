@@ -1,12 +1,15 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import 'rxjs/add/operator/map'
 
 @Injectable()
 export class MyDataServiceService {
 
-  constructor() { }
+  constructor(private http: Http) { }
 
-  getLanguageList = function(){
-    return ['Java', 'C#', '.Net'];
+  getTodos = function(){
+    return this.http.get('https://jsonplaceholder.typicode.com/todos')
+    .map(
+      (response) => response.json());
   }
-
 }

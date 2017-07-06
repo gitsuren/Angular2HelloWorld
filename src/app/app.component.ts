@@ -32,7 +32,9 @@ constructor(private myDataService:MyDataServiceService){
   hasBinaryChanged = 0;
   hasHexaChanged = 0;
 
-  languageList;
+  languageList: string[];
+
+  todos: Todo[];
 
 //Validators => from Angular core
 //if you want custom validators, need to create one
@@ -52,8 +54,10 @@ constructor(private myDataService:MyDataServiceService){
       binary : new FormControl(""),
       hexa : new FormControl("")
     });
+    this.languageList = ['Java', 'C#', '.Net'];
+    this.myDataService.getTodos().subscribe(todos => this.todos=todos);
 
-    this.languageList = this.myDataService.getLanguageList();
+    console.log("TODOS..." + this.todos);
   }
 
 //Custom validators...
@@ -121,4 +125,12 @@ constructor(private myDataService:MyDataServiceService){
       this.hasHexaChanged = 0;
     }
   }
+}
+
+
+interface Todo{
+  userId: number,
+  id: number,
+  title: string,
+  completed: boolean
 }
