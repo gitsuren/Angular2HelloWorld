@@ -3,6 +3,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { MyDataServiceService } from './my-data-service.service';
 
+declare var helloWorld: any;
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -81,6 +83,8 @@ constructor(private myDataService:MyDataServiceService){
 
   removeItem = function(index){
     this.items.splice(index, 1);
+    //test external JS file
+    new helloWorld();
   }
 //Template drive form
   onSubmit = function(userdata){
